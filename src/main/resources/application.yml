@@ -1,0 +1,8 @@
+spring:
+  kafka:
+    bootstrap-servers: IP-OR-HOSTNAME:9094
+    consumer:
+      group-id: apples-group
+      auto-offset-reset: earliest
+server:
+  port: 8081

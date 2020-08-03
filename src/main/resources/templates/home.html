@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Strimzi Kafka Operator with Spring Boot Demo</title>
+    <!--/*/ <th:block th:include="head :: head"/> /*/-->
+    <meta http-equiv="refresh" content="2"/>
+</head>
+<body id="samples">
+<div th:replace="menu :: menu"></div>
+
+<div id="content" class="container my-9">
+    <h1>Strimzi Kafka Operator with Spring Boot Demo</h1>
+
+    <div>
+        <p>Welcome, to the Strimzi Kafka Operator with Spring Boot Demo!!!</p>
+    </div>
+
+    <!-- Success Dismissible Alert -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Total of <span th:text="${topicMessagesCount}" /> topic messages to process
+    </div>
+    <div class="row" th:if="${topicMessagesCount > 0}">
+        <table class="table table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th>Message</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="message : ${topicMessages}">
+                    <td th:text="${message}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+
+<div th:replace="footer :: footer"></div>
+</body>
+</html>
