@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: IP-OR-HOSTNAME:9094
+    bootstrap-servers: ${CLUSTER_LB_IP}:9094
     consumer:
       group-id: apples-group
       auto-offset-reset: earliest
